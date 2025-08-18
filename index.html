@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt_BR" data-theme="dark">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Projetos</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<body class="bg-gray-100 font-sans">
 
-<body>
-    <h1>Hello world.</h1>
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">Meu Portfólio</h1>
+      <nav>
+        <a href="#projetos" class="btn btn-ghost">Projetos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+    <h2 class="text-4xl font-bold mb-4">Bem-vindo ao meu portfólio</h2>
+    <p class="text-lg max-w-xl mx-auto">Aqui você encontra meus projetos mais recentes e interessantes.</p>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="container mx-auto px-6 py-16">
+    <h3 class="text-3xl font-bold mb-8 text-gray-800">Projetos</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card do Projeto Calorias de Bolso -->
+      <div class="card bg-white shadow-xl hover:shadow-2xl transition duration-300">
+        <figure class="px-4 pt-4">
+          <img src="https://via.placeholder.com/400x200.png?text=Calorias+de+Bolso" alt="Calorias de Bolso" class="rounded-xl" />
+        </figure>
+        <div class="card-body">
+          <h4 class="card-title font-bold text-lg">Calorias de Bolso</h4>
+          <p>Um web app que ajuda você a controlar suas calorias de forma prática e rápida.</p>
+          <div class="card-actions justify-end mt-4">
+            <a href="/projetos/calorias" class="btn btn-primary btn-sm">Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplo de outro projeto -->
+      <div class="card bg-white shadow-xl hover:shadow-2xl transition duration-300">
+        <figure class="px-4 pt-4">
+          <img src="https://via.placeholder.com/400x200.png?text=Projeto+2" alt="Projeto 2" class="rounded-xl" />
+        </figure>
+        <div class="card-body">
+          <h4 class="card-title font-bold text-lg">Projeto 2</h4>
+          <p>Descrição breve do projeto 2.</p>
+          <div class="card-actions justify-end mt-4">
+            <a href="/projetos/projeto2" class="btn btn-primary btn-sm">Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicione mais cards aqui -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 text-center">
+    <p>&copy; 2025 Meu Nome. Todos os direitos reservados.</p>
+  </footer>
+
 </body>
-
 </html>
