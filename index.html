@@ -3,69 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio de Projetos</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.52.0/dist/full.css" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-base-100 text-base-content">
 
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-800">Meu Portfólio</h1>
-      <nav>
-        <a href="#projetos" class="btn btn-ghost">Projetos</a>
-      </nav>
+  <!-- Navbar -->
+  <div class="navbar text-primary-content px-8">
+    <a class="btn btn-ghost normal-case text-xl">Meu Portfolio</a>
+    <div class="flex-1"></div>
+    <div class="hidden md:flex gap-4">
+      <a href="#projetos" class="btn btn-ghost">Projetos</a>
+      <a href="#contato" class="btn btn-ghost">Contato</a>
     </div>
-  </header>
+  </div>
 
-  <!-- Hero -->
-  <section class="text-center py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
-    <h2 class="text-4xl font-bold mb-4">Bem-vindo ao meu portfólio</h2>
-    <p class="text-lg max-w-xl mx-auto">Aqui você encontra meus projetos mais recentes e interessantes.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="a.png" class="max-w-sm" alt="Foto do desenvolvedor"/>
+      <div>
+        <h1 class="text-5xl font-bold">Oi, eu sou Celio!</h1>
+        <p class="py-6 max-w-md">Desenvolvedor Full-stack e Criador de Experiências Digitais. Transforme suas ideias em projetos web modernos e responsivos.</p>
+        <a href="#contato" class="btn btn-primary">Entrar em contato</a>
+      </div>
+    </div>
   </section>
 
   <!-- Projetos -->
-  <section id="projetos" class="container mx-auto px-6 py-16">
-    <h3 class="text-3xl font-bold mb-8 text-gray-800">Projetos</h3>
+<section id="projetos" class="py-20 px-8 bg-base-200">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold">Projetos</h2>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Card do Projeto Calorias de Bolso -->
-      <div class="card bg-white shadow-xl hover:shadow-2xl transition duration-300">
-        <figure class="px-4 pt-4">
-          <img src="https://via.placeholder.com/400x200.png?text=Calorias+de+Bolso" alt="Calorias de Bolso" class="rounded-xl" />
-        </figure>
-        <div class="card-body">
-          <h4 class="card-title font-bold text-lg">Calorias de Bolso</h4>
-          <p>Um web app que ajuda você a controlar suas calorias de forma prática e rápida.</p>
-          <div class="card-actions justify-end mt-4">
-            <a href="/projetos/calorias" class="btn btn-primary btn-sm">Ver Projeto</a>
-          </div>
+  <!-- Container onde os cards serão inseridos -->
+  <div id="projetos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"></div>
+
+  <!-- Template dos cards -->
+  <template id="card-template">
+    <div class="card bg-base-100 shadow-xl">
+      <figure><img src="" alt="Projeto"/></figure>
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <p></p>
+        <div class="card-actions justify-end">
+          <a href="#" class="btn btn-primary btn-sm">Ver Projeto</a>
         </div>
       </div>
+    </div>
+  </template>
+</section>
 
-      <!-- Exemplo de outro projeto -->
-      <div class="card bg-white shadow-xl hover:shadow-2xl transition duration-300">
-        <figure class="px-4 pt-4">
-          <img src="https://via.placeholder.com/400x200.png?text=Projeto+2" alt="Projeto 2" class="rounded-xl" />
-        </figure>
-        <div class="card-body">
-          <h4 class="card-title font-bold text-lg">Projeto 2</h4>
-          <p>Descrição breve do projeto 2.</p>
-          <div class="card-actions justify-end mt-4">
-            <a href="/projetos/projeto2" class="btn btn-primary btn-sm">Ver Projeto</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Adicione mais cards aqui -->
+  <!-- Contato -->
+  <section id="contato" class="py-20 px-8 bg-base-100">
+    <div class="max-w-3xl mx-auto text-center flex gap-4">
+    <div class="flex-1">
+        <h2 class="text-4xl font-bold mb-6">Contato</h2>
+        <p class="mb-8">Entre em contato comigo para projetos, parcerias ou ideias.</p>
+    </div>
+      <form class="flex flex-col gap-4 grow">
+        <input type="text" placeholder="Seu nome" class="input input-bordered w-full" />
+        <input type="email" placeholder="Seu email" class="input input-bordered w-full" />
+        <textarea placeholder="Mensagem" class="textarea textarea-bordered w-full"></textarea>
+        <button class="btn btn-primary mt-2">Enviar</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8 text-center">
-    <p>&copy; 2025 Meu Nome. Todos os direitos reservados.</p>
+  <footer class="footer footer-center bg-base-200 p-4">
+    <div>
+      <p>© 2025 Seu Nome. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
+<script>
+  const projetos = [
+    {
+      titulo: "Calorias de Bolso",
+      descricao: "Descrição rápida do projeto 1",
+      imagem: "/projeto1.png",
+      link: "/projetos/calorias"
+    },
+    {
+      titulo: "Projeto 2",
+      descricao: "Descrição rápida do projeto 2",
+      imagem: "https://placehold.co/400x250",
+      link: "#"
+    },
+    {
+      titulo: "Projeto 3",
+      descricao: "Descrição rápida do projeto 3",
+      imagem: "https://placehold.co/400x250",
+      link: "#"
+    }
+  ];
+
+  const container = document.getElementById('projetos-container');
+  const template = document.getElementById('card-template');
+
+  projetos.forEach(projeto => {
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('img').src = projeto.imagem;
+    clone.querySelector('img').alt = projeto.titulo;
+    clone.querySelector('.card-title').textContent = projeto.titulo;
+    clone.querySelector('p').textContent = projeto.descricao;
+    clone.querySelector('a').href = projeto.link;
+    container.appendChild(clone);
+  });
+</script>
 </body>
 </html>
